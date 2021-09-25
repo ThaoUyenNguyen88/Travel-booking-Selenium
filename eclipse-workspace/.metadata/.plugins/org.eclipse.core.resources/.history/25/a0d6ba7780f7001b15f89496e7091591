@@ -1,0 +1,41 @@
+package com.nopcommerce.demo.pages;
+
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class RegisterPage extends BasePageObject{
+	
+	private By firstNameLocator = By.id("FirstName");
+	private By lastNameLocator = By.id("LastName");
+	private By dayLocator = By.name("DateOfBirthDay");
+	private By monthLocator = By.name("DateOfBirthMonth");
+	private By yearLocator = By.name("DateOfBirthYear");
+	private By emailLocator = By.id("Email");
+
+	public RegisterPage(WebDriver driver, Logger log) {
+		super(driver, log);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void selectDayOfBirth(int day, int month, int year) {
+		Select slDay = new Select(find(dayLocator));
+		slDay.selectByValue(intergerToString(day));
+		Select slMonth = new Select(find(monthLocator));
+		slMonth.selectByValue(intergerToString(month));
+		Select slYear = new Select(find(yearLocator));
+		slYear.selectByValue(intergerToString(year));
+	}
+	public void selectGender(String gender) {
+		click(findByText(gender));
+	}
+	
+	public void typeInput( String firstName, String lastName,  String Email) {
+		type(firstNameLocator, firstName);
+		type(lastNameLocator, lastName);
+		type(emailLocator, Email);
+		
+	}
+	
+}

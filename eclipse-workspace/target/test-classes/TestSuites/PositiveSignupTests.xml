@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="PositiveSignupTestSuite" verbose="1">
+	
+	<test name="PositiveSignupTests">
+		<parameter name="firstName" value="uyen" />
+		<parameter name="lastName" value="uyen" />
+		<parameter name="phone" value="079876534" />
+		<parameter name="email" value="u@m.c" />
+		<parameter name="password" value="123456" />
+		<parameter name="accountType" value="Agent" />
+		<classes>
+			<class name="net.phptravels.signupTests.PositiveSignupTests">
+			</class>
+		</classes>
+	</test>
+	
+</suite>
+

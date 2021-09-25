@@ -1,0 +1,28 @@
+package stepImplementations;
+
+
+import com.herokuapp.theinternet.base.TestUtilities;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class BDDLoginTest{
+	
+	@Given("^user is on the login page$")
+	public void user_is_on_the_login_page() {
+		System.out.println("User is on the login page");
+	}
+	
+	@When("^user enter correct username and correct password$")
+		public void user_enter_correct_username_and_correct_password() {
+		System.out.println("user enter correct username and correct password");
+	}
+	
+	@Then("^user click Login Button$")
+	public void user_click_Login_Button(){
+		System.out.println("user click Login Button");
+	}
+
+}

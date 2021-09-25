@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private void sleep()&apos; from &apos;com.herokuapp.theinternet.PositiveTests.LoginTest()&apos; to &apos;com.herokuapp.theinternet.PositiveTests&apos;&#x0D;&#x0A;- Original project: &apos;selenium-for-beginners&apos;&#x0D;&#x0A;- Method name: &apos;sleep&apos;&#x0D;&#x0A;- Destination type: &apos;com.herokuapp.theinternet.PositiveTests&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;sleep&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;com.herokuapp.theinternet{PositiveTests.java" name="sleep" replace="false" selection="473 116" stamp="1625666317213" version="1.0" visibility="2"/>
+</session>

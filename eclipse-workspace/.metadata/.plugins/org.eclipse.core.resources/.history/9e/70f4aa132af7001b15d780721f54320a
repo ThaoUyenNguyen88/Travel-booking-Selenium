@@ -1,0 +1,31 @@
+package com.saucedemo.loginPageTest;
+
+import java.util.Map;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.nopcommerce.demo.base.*;
+import com.saucedemo.pages.InventoryPage;
+import com.saucedemo.pages.LoginPage;
+
+public class PositiveLogInTests extends TestUtilities {
+
+	@Test(priority = 1, dataProvider = "csvReader", dataProviderClass = CsvDataProviders.class)
+	public void positiveLoginTest(Map<String, String> testData) {
+		// Data
+		String no = testData.get("no");
+		String username = testData.get("username");
+		String password = testData.get("password");
+		String description = testData.get("description");
+		
+		log.info("Starting positiveLogInTest #"+no+" for "+description);
+		LoginPage loginPage = new LoginPage(driver, log);
+		loginPage.openUrl();
+
+		InventoryPage inventoryPage = loginPage.logIn(username, password);
+
+		Assert.assertEquals(inventoryPage.getCurrentUrl(), inventoryPage.getPageUrl());
+	}
+
+}

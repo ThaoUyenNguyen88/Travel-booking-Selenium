@@ -1,0 +1,14 @@
+package com.nopcommerce.demo.registerPageTests;
+
+import org.testng.annotations.Test;
+
+import com.nopcommerce.demo.base.TestUtilities;
+
+public class RegisterPageTests extends TestUtilities{
+	
+	@Test
+	public void registerPageTest() {
+		
+	}
+
+}

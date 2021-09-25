@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [PositiveSignupTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="PositiveSignupTests(failed)">
+    <parameter name="firstName" value="uyen"/>
+    <parameter name="lastName" value="uyen"/>
+    <parameter name="password" value="123456"/>
+    <parameter name="phone" value="079876534"/>
+    <parameter name="accountType" value="Agent"/>
+    <parameter name="email" value="u@m.c"/>
+    <classes>
+      <class name="net.phptravels.signupTests.PositiveSignupTests">
+        <methods>
+          <include name="signupTest" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- net.phptravels.signupTests.PositiveSignupTests -->
+    </classes>
+  </test> <!-- PositiveSignupTests(failed) -->
+</suite> <!-- Failed suite [PositiveSignupTestSuite] -->

@@ -1,0 +1,7 @@
+Feature: Test the login functionality on herokuapp
+
+Scenario: the user should be able to login with correct username and password
+Given: user is on the login page
+When: user enter correct username and correct password
+And: user click Login Button
+Then: user go to the Secure Area

@@ -1,0 +1,24 @@
+package com.nopcommerce.demo.pages;
+
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class RegisterPage extends BasePageObject{
+	
+	private By maleLocator = By.id("gender-male");
+	private By femaleLocator = By.id("gender-female");
+	private By firstNameLocator = By.id("FirstName");
+	private By lastNameLocator = By.id("LastName");
+	private By dayLocator = By.name("DateOfBirthDay");
+	private By monthLocator = By.name("DateOfBirthMonth");
+	private By yearLocator = By.name("DateOfBirthYear");
+	private By emailLocator = By.id("Email");
+
+	public RegisterPage(WebDriver driver, Logger log) {
+		super(driver, log);
+		// TODO Auto-generated constructor stub
+	}
+	
+
+}

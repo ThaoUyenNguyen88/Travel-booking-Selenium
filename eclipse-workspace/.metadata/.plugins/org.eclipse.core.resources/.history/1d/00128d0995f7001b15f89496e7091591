@@ -1,0 +1,20 @@
+package com.nopcommerce.demo.registerPageTests;
+
+import org.testng.annotations.Test;
+
+import com.nopcommerce.demo.base.TestUtilities;
+import com.nopcommerce.demo.pages.RegisterPage;
+import com.nopcommerce.demo.pages.WelcomePage;
+
+
+public class PositiveRegisterTests extends TestUtilities{
+
+	@Test
+	public void positiveRegisterTest() {
+		WelcomePage welcomePage = new WelcomePage(driver, log);
+		welcomePage.openPage();
+		
+		RegisterPage registerPage = welcomePage.clickRegisterLink();
+		registerPage.yourPersonalDetails("gender-male", "uyen", "Nguyen", 1, 1, 1999, "uyen@gmail.com");
+	}
+}

@@ -1,0 +1,52 @@
+package com.saucedemo.pages;
+
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class LoginPage extends BasePageObject{
+	
+	private String pageUrl = "https://www.saucedemo.com/";
+	private By usernameLocator = By.id("user-name");
+	private By passwordLocator = By.id("password");
+	private By btnLoginLocator = By.id("login-button");
+	private By errorMessageLocator = By.xpath("//h3");
+
+	
+	public LoginPage(WebDriver driver, Logger log) {
+		super(driver, log);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void openUrl() {
+		log.info("Open page + "+pageUrl);
+		openUrl(pageUrl);
+		log.info("Page opened");
+	}
+	
+	//Login Success
+	public InventoryPage logIn(String username, String password) {
+		log.info("Login with username: "+username+" and password: "+password);
+		type(usernameLocator, username);
+		type(passwordLocator, password);
+		click(btnLoginLocator);
+		return new InventoryPage(driver, log);
+	}
+	
+	public void negativeLogin(String username, String password) {
+		log.info("Login with username: "+username+" and password: "+password);
+		type(usernameLocator, username);
+		type(passwordLocator, password);
+		click(btnLoginLocator);
+	}
+	
+	/** Wait for error message to be visible on the page */
+	public void waitForErrorMessage() {
+		waitForVisibilityOf(errorMessageLocator, 5);
+	}
+
+	public String getErrorMessageText() {
+		return find(errorMessageLocator).getText();
+	}
+}
+

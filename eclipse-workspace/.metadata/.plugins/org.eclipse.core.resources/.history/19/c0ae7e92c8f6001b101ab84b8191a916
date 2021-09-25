@@ -1,0 +1,8 @@
+no,username,password,expectedMessage,decription
+1,standard_user,incorrect_password,Epic sadface: Username and password do not match any user in this service,incorrect password
+2,incorrect_username,secret_sauce,Epic sadface: Username and password do not match any user in this service,incorrect username
+3,,secret_sauce,Epic sadface: Username is required,empty username
+4,standard_user,,Epic sadface: Password is required,empty password
+5,,,Epic sadface: Username is required,empty username and password
+
+

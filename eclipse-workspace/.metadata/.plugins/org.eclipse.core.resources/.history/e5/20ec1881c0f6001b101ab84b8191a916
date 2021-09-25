@@ -1,0 +1,21 @@
+package com.saucedemo.loginPageTest;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import com.saucedemo.base.TestUtilities;
+import com.saucedemo.pages.InventoryPage;
+import com.saucedemo.pages.LoginPage;
+import com.saucedemo.base.*;
+public class PositiveLogInTests extends TestUtilities{
+	
+	@Test(priority = 1, dataProvider = "csvReader", dataProviderClass = CsvDataProviders.class)
+	public void positiveLoginTest() {
+		LoginPage loginPage = new LoginPage(driver, log);
+		loginPage.openUrl();
+		
+		InventoryPage inventoryPage = loginPage.logIn("standard_user", "secret_sauce");
+		
+		Assert.assertEquals(inventoryPage.getCurrentUrl(), inventoryPage.getPageUrl());
+	}
+
+}

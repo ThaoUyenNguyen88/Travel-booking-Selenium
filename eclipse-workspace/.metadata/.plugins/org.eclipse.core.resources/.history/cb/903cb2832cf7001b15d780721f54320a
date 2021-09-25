@@ -1,0 +1,14 @@
+package com.nopcommerce.demo.loginPageTest;
+
+import org.testng.annotations.Test;
+
+import com.nopcommerce.demo.base.TestUtilities;
+import com.nopcommerce.demo.pages.WelcomePage;
+
+public class WelcomePageTests extends TestUtilities{
+	@Test
+	public void welcomePageTest() {
+		WelcomePage welcomePage = new WelcomePage(driver, log);
+		welcomePage.openPage();
+	}
+}

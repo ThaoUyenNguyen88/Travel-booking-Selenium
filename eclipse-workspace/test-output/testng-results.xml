@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-09-20T20:34:55 ICT" name="Default suite" finished-at="2021-09-20T20:35:29 ICT" duration-ms="34159">
+    <groups>
+    </groups>
+    <test started-at="2021-09-20T20:34:55 ICT" name="Default test" finished-at="2021-09-20T20:35:29 ICT" duration-ms="34159">
+      <class name="net.phptravels.searchTests.SearchHotelTests">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method,java.lang.String,org.testng.ITestContext)[pri:0, instance:net.phptravels.searchTests.SearchHotelTests@a530d0a]" started-at="2021-09-20T20:34:55 ICT" name="setUp" finished-at="2021-09-20T20:35:04 ICT" duration-ms="9023" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void net.phptravels.searchTests.SearchHotelTests.SearchHotelTest() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[org.testng.TestRunner@53abfc07]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="SearchHotelTest()[pri:0, instance:net.phptravels.searchTests.SearchHotelTests@a530d0a]" started-at="2021-09-20T20:35:04 ICT" name="SearchHotelTest" finished-at="2021-09-20T20:35:27 ICT" duration-ms="23638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchHotelTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:net.phptravels.searchTests.SearchHotelTests@a530d0a]" started-at="2021-09-20T20:35:27 ICT" name="tearDown" finished-at="2021-09-20T20:35:29 ICT" duration-ms="1454" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- net.phptravels.searchTests.SearchHotelTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

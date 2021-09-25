@@ -1,0 +1,67 @@
+package com.herokuapp.theinternet.alertstest;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import com.herokuapp.theinternet.base.TestUtilities;
+import com.herokuapp.theinternet.pages.JavaScriptAlertsPage;
+import com.herokuapp.theinternet.pages.WelcomePage;
+
+public class AlertsTests extends TestUtilities{
+	@Test
+	public void jsAlert() {
+		SoftAssert softAssert = new SoftAssert();
+		
+		WelcomePage welcomePageObject = new WelcomePage(driver, log);
+		welcomePageObject.openPage();
+		
+		JavaScriptAlertsPage javaScriptAlertsPage = welcomePageObject.clickJavaScriptAlertsLink();
+		javaScriptAlertsPage.openJSAlert();
+		String alertMessage = javaScriptAlertsPage.getTextAlert();
+		javaScriptAlertsPage.acceptAlert();
+		String result = javaScriptAlertsPage.getTextResult();
+		sleep(1000);
+		//Verify alert text is expected
+		softAssert.assertTrue(alertMessage.equals("I am a JS Alert"));
+		//Verify text result is expected
+		softAssert.assertTrue(result.equals("You successfully clicked an alert"));
+	}
+	
+	@Test
+	public void jsConfirmDismiss() {
+		SoftAssert softAssert = new SoftAssert();
+		WelcomePage welcomePageObject = new WelcomePage(driver, log);
+		welcomePageObject.openPage();
+		
+		JavaScriptAlertsPage javaScriptAlertsPage = welcomePageObject.clickJavaScriptAlertsLink();
+		javaScriptAlertsPage.openJSConfirm();
+		String alertMessage = javaScriptAlertsPage.getTextAlert();
+		javaScriptAlertsPage.dismissAlert();
+		String result = javaScriptAlertsPage.getTextResult();
+		sleep(1000);
+		//Verify alert text is expected
+		softAssert.assertTrue(alertMessage.equals("I am a JS Confirm"));
+		//Verify text result is expected
+		softAssert.assertTrue(result.equals("You clicked: Cancel"));
+	}
+	
+	@Test
+	public void jsPrompt() {
+		SoftAssert softAssert = new SoftAssert();
+		WelcomePage welcomePageObject = new WelcomePage(driver, log);
+		welcomePageObject.openPage();
+		
+		JavaScriptAlertsPage javaScriptAlertsPage = welcomePageObject.clickJavaScriptAlertsLink();
+		javaScriptAlertsPage.openJSPrompt();
+		String alertMessage = javaScriptAlertsPage.getTextAlert();
+		javaScriptAlertsPage.typeTextIntoAlert("uyen xinh");
+		String result = javaScriptAlertsPage.getTextResult();
+		sleep(1000);
+		//Verify alert text is expected
+		softAssert.assertTrue(alertMessage.equals("I am a JS prompt"));
+		//Verify text result is expected
+		softAssert.assertTrue(result.equals("You entered: uyen xinh"));
+	}
+
+}
